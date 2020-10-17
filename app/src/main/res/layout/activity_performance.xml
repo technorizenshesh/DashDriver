@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="main.com.dashdriver.activity.PerformanceAct">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/toobarcolor"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/CustomTheme" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/exit_app_but"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_back" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sts_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="55dp"
+                android:text="@string/performance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/border_grey_rec"
+                android:padding="5dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_from_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:hint="From date"
+                    android:textColor="@color/darktextcol"
+                    android:textSize="@dimen/extralarge"
+                    android:textStyle="bold" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/lightgrey"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_to_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:hint="To date"
+                    android:textColor="@color/darktextcol"
+                    android:textSize="@dimen/extralarge"
+                    android:textStyle="bold" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/lightgrey"/>
+                <ImageView
+                    android:id="@+id/img_search"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_search"/>
+            </LinearLayout>
+            <RadioGroup
+                android:id="@+id/rd_group"
+                android:checkedButton="@id/rd_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rd_today"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/today"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:background="@drawable/rd_bg"
+                    android:button="@android:color/transparent"
+                    android:textSize="@dimen/medium"/>
+                <RadioButton
+                    android:id="@+id/rd_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/week"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:background="@drawable/rd_bg"
+                    android:button="@android:color/transparent"
+                    android:textSize="@dimen/medium"/>
+                <RadioButton
+                    android:id="@+id/rd_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/month"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:background="@drawable/rd_bg"
+                    android:button="@android:color/transparent"
+                    android:textSize="@dimen/medium"/>
+            </RadioGroup>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/darktextcol"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <LinearLayout
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:id="@+id/month_data_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_no_record"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/medium"
+            android:text="@string/no_ride_details_found"/>
+
+    </RelativeLayout>
+
+</layout>

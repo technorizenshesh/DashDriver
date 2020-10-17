@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "632758324308",
+    "firebase_url": "https://dash-859d4.firebaseio.com",
+    "project_id": "dash-859d4",
+    "storage_bucket": "dash-859d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632758324308:android:a8ec840675495ce02ab1c1",
+        "android_client_info": {
+          "package_name": "main.com.dash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632758324308-gpqpqslgu2btp3qdhq09r686bdp0j59o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgj2lLCem0nLkVmf56BYvJVs0ErpPDZpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632758324308-gpqpqslgu2btp3qdhq09r686bdp0j59o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632758324308:android:772f76cb086522ba2ab1c1",
+        "android_client_info": {
+          "package_name": "main.com.dashdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632758324308-gpqpqslgu2btp3qdhq09r686bdp0j59o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgj2lLCem0nLkVmf56BYvJVs0ErpPDZpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632758324308-gpqpqslgu2btp3qdhq09r686bdp0j59o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

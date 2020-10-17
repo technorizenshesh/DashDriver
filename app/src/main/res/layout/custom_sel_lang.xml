@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+
+    >
+<LinearLayout
+    android:layout_margin="10dp"
+    android:background="@drawable/border_grey_rec"
+    android:padding="10dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <main.com.dashdriver.constant.ExpandableHeightListView
+        android:layout_width="match_parent"
+        android:id="@+id/languagelist"
+        android:layout_height="wrap_content"></main.com.dashdriver.constant.ExpandableHeightListView>
+
+<LinearLayout
+    android:layout_marginTop="10dp"
+    android:weightSum="2"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/cancel_tv"
+        android:background="@color/buttoncol"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="@dimen/large"
+        android:text="@string/cancel"
+        android:layout_width="0dp"
+        android:padding="2dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/donetv"
+        android:background="@color/buttoncol"
+
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:padding="2dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/large"
+        android:text="@string/done"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

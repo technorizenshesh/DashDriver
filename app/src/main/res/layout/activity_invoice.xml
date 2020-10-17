@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ac_contact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:background="@color/white"
+    tools:context=".activity.InvoiceActivity">
+
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/toobarcolor"
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/CustomTheme" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="end|center_vertical"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small"
+                android:visibility="gone" />
+
+        </LinearLayout>
+        <TextView
+
+            android:id="@+id/titletext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/invoice"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_above="@+id/cullectpayment"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/date_tv"
+                    android:background="@color/darkgrey"></View>
+
+                <TextView
+                    android:id="@+id/date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium" />
+
+                <View
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/date_tv"
+                    android:background="@color/darkgrey"></View>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/total_fare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="$0.00"
+                android:textStyle="bold"
+                android:textColor="@color/darktextcol"
+                android:textSize="25dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/tripsummary"
+                    android:background="@color/darkgrey"></View>
+
+                <TextView
+                    android:id="@+id/tripsummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/tripsummary"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium" />
+
+                <View
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tripsummary"
+                    android:background="@color/darkgrey"></View>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/payment_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@string/paymenttype"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small" />
+            <TextView
+                android:id="@+id/discount_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Discount applied : $0"
+                android:textColor="@color/buttoncol"
+                android:textSize="@dimen/small"
+                android:textStyle="bold" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/promocodedis"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/paymentmessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="@string/pleasecollect"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/darkgrey"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/details"
+                    android:background="@color/darkgrey"></View>
+
+                <TextView
+                    android:id="@+id/details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium" />
+
+                <View
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/details"
+                    android:background="@color/darkgrey"></View>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Base Fare"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/basefare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/time_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Time (0.0 min)"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/timefare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Distance"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/distancefare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Booking Charge"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/carcharge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="@string/nightcharge"
+                    android:textColor="@color/black"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/nightcharge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="@string/servicetax"
+                    android:textColor="@color/black"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/servicetax"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="@string/tip"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tipamount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="Please Rate User"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large" />
+            <RatingBar
+                android:visibility="gone"
+                android:id="@+id/ratingbar"
+                android:layout_margin="0dp"
+                android:layout_gravity="center"
+                android:numStars="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/comment_et"
+                android:gravity="start"
+                android:padding="5dp"
+                android:layout_marginBottom="15dp"
+                android:hint="@string/entercomment"
+                android:background="@drawable/border_grey_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+<ProgressBar
+    android:visibility="gone"
+    android:id="@+id/progressbar"
+    android:layout_centerInParent="true"
+    android:layout_width="40dp"
+    android:layout_height="40dp" />
+    <TextView
+
+        android:layout_alignParentBottom="true"
+        android:id="@+id/cullectpayment"
+        android:background="@color/toobarcolor"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/collectmoney"
+
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/large"
+        android:visibility="gone" />
+
+</RelativeLayout>

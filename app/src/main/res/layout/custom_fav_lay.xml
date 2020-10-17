@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/driver_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/user" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@+id/status"
+                android:layout_toRightOf="@+id/driver_img"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/driver_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jonson Sitorus"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium" />
+
+                <TextView
+                    android:id="@+id/cardetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/switch_my_sts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:paddingLeft="10dp"
+                    android:text=""
+                    android:textOff=""
+                    android:textOn=""
+                    android:thumb="@drawable/switch_thumb_two"
+                    android:track="@drawable/switch_greyunchecked" />
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

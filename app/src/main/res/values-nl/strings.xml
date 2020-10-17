@@ -1,0 +1,715 @@
+<resources>
+    <string name="allowpermission"> Toestemming toestaan ​​</string>
+        <string name="nessper"> Deze toestemming is nodig om DASH-stuurprogramma </string>
+    <string name="allow"> Allow </string>
+        
+    <string name="closeapp"> App sluiten </string>
+        
+    <string name="drawer_open"> Open </string>
+        
+    <string name="drawer_close"> Sluiten </string>
+        
+    <string name="login"> INLOGGEN </string>
+        
+    <string name="signup"> AANMELDEN </string>
+        
+    <string name="wevarify"> We verifiëren uw mobiele nummer </string>
+        
+    <string name="wantcont"> Wil je doorgaan? </string>
+        
+    <string name="login_sm"> Inloggen </string>
+        
+    <string name="phone"> Telefoon </string>
+        
+    <string name="password"> Wachtwoord </string>
+        
+    <string name="forgotpass"> Wachtwoord vergeten? </string>
+        
+    <string name="logface"> INLOGGEN MET FACEBOOK </string>
+        
+    <string name="firstname"> Voornaam </string>
+        
+    <string name="lastname"> Achternaam </string>
+        
+    <string name="pickuplocation"> Ophaallocatie </string>
+        
+    <string name="droplocation"> Afleverlocatie </string>
+        
+    <string name="sign_sm"> Aanmelden </string>
+        
+    <string name="bookletter"> LATER BOEKEN </string>
+        
+    <string name="booknow"> BOEK NU </string>
+        
+    <string name="myprofile"> Profiel </string>
+        
+    <string name="mywallet"> Mijn portemonnee </string>
+        
+    <string name="money"> Geld </string>
+        
+    <string name="cashless">Cashless, probleemloze ritten en meer </string>
+        
+    <string name="currentbal"> Uw huidige saldo </string>
+        
+    <string name="addhitechmoney"> Bedrag toevoegen </string>
+        
+    <string name="entermoney"> Voer een bedrag in tussen $ 10 - $ 100 </string>
+        
+    <string name="billpaywith"> Betaal met </string>
+        
+    <string name="ridehistory"> Geschiedenis </string>
+        
+    <string name="logout"> Logout </string>
+        
+    <string name="home"> Home </string>
+        
+    <string name="location"> Locatie </string>
+        
+    <string name="setdrop"> Voer inleverlocatie in </string>
+        
+    <string name="forgotpassword"> Wachtwoord vergeten </string>
+        
+    <string name="pleaseenteremailid"> Voer uw e-mail-ID in </string>
+        
+    <string name="email"> e-mail-id </string>
+        
+    <string name="selectvehicleimg"> Selecteer uw voertuigafbeelding </string>
+        
+    <string name="enteryourvehiclename"> Voer uw voertuignaam in </string>
+        
+    <string name="selectvehiclecategory"> Selecteer uw voertuigcategorie </string>
+        
+    <string name="selectvehiclesize"> Selecteer de voertuiggrootte </string>
+        
+    <string name="enteryourvehicleregnumber"> Voer uw VIN-nummer in </string>
+        
+    <string name="selectvehiclemodel"> Selecteer het modeljaar van uw voertuig </string>
+        
+    <string name="enteryourvehiclecol"> Voer de kleur van uw voertuig in </string>
+        
+    <string name="submit"> Verzenden </string>
+    <string name="createaccoub"> Maak een account aan </string>
+        
+    <string name="driverinfo"> Bestuurdersinformatie </string>
+        
+    <string name="username"> Gebruikersnaam </string>
+        
+    <string name="driverlicens"> Rijbewijs </string>
+        
+    <string name="carmodel"> Automerk en model </string>
+        
+    <string name="yearmanu"> Productiejaar </string>
+        
+    <string name="selcarcol"> Selecteer autokleur </string>
+        
+    <string name="carregis"> Kentekennummer </string>
+        
+    <string name="insurance"> Verzekering </string>
+        
+    <string name="register"> REGISTREREN </string>
+        
+    <string name="driverside"> Bestuurderszijde </string>
+        
+    <string name="goonline"> Ga online </string>
+        
+    <string name="change"> Wijzigen </string>
+        
+    <string name="addcar"> Auto toevoegen </string>
+        
+    <string name="pleasewait"> even geduld ... </string>
+        
+    <string name="gooffline"> Ga offline </string>
+        
+    <string name="selectcar"> Selecteer uw auto </string>
+        
+    <string name="cancel"> Annuleren </string>
+        
+    <string name="select"> Selecteer </string>
+        
+    <string name="decline"> DECLINE </string>
+        
+    <string name="accept"> ACCEPT </string>
+        
+    <string name="pickuppesanger"> Pickup passagier </string>
+        
+    <string name="arrived"> AANGEKOMEN </string>
+        
+    <string name="viewpessangerdetail"> Bekijk passagiersgegevens </string>
+        
+    <string name="canceltripmenu"> Reis annuleren </string>
+        
+    <string name="selectlang"> Selecteer talen </string>
+        
+    <string name="done"> Klaar </string>
+        
+    <string name="invalidcredential"> Ongeldige referenties </string>
+        
+    <string name="entermobile"> Voer uw mobiele nummer in </string>
+        
+    <string name="enterpass"> Voer wachtwoord in </string>
+        
+    <string name="selectcarmodel"> Selecteer automerk en model </string>
+        
+    <string name="selmanyyear"> Maufacture Year </string>
+        
+    <string name="selectcarcol"> Selecteer autokleur </string>
+        
+    <string name="plsentpass"> Voer wachtwoord in </string>
+        
+    <string name="plsmobilestr"> Voer een mobiel nummer in </string>
+        
+    <string name="plsentusername"> Voer gebruikersnaam in </string>
+        
+    <string name="plsselyear"> Selecteer het fabricagejaar </string>
+        
+    <string name="entercarmodel"> Voer de naam van het automodel in </string>
+        
+    <string name="plsenterregi"> Voer het kentekennummer in </string>
+        
+    <string name="pleasuplodains"> Upload een verzekeringskaartafbeelding </string>
+        
+    <string name="plsupldri"> Upload een rijbewijsafbeelding </string>
+        
+    <string name="profile"> Profiel </string>
+        
+    <string name="save"> Opslaan </string>
+        
+    <string name="update"> Update </string>
+        
+    <string name="pesdetail"> Passagiersgegevens </string>
+        
+    <string name="call"> Bel </string>
+        
+    <string name="message"> Bericht </string>
+        
+    <string name="carimage"> Selecteer auto-afbeelding </string>
+        
+    <string name="carispect"> Registratie </string>
+        
+    <string name="no"> Nee </string>
+        
+    <string name="ok"> Ok </string>
+    <string name="canceluser"> Deze rit is geannuleerd door de gebruiker </string>
+        
+    <string name="areusure"> Weet je het zeker? </string>
+        
+    <string name="tocancel"> Annuleer dit verzoek </string>
+        
+    <string name="slideendtrip"> Trip beëindigen </string>
+        
+    <string name="yes"> Ja </string>
+        
+    <string name="toendtrip"> Beëindig de reis </string>
+        
+    <string name="tostarttrip"> Start de reis </string>
+        
+    <string name="warning"> Waarschuwing !! </string>
+        
+    <string name="notonpoint"> Je bent niet op het afleverpunt. Bevestig om de rit te beëindigen </string>
+        
+    <string name="slidebegintrip"> Trip starten </string>
+        
+    <string name="tripsummary"> Reisoverzicht </string>
+        
+    <string name="paymenttype"> Betalingstype: contant geld </string>
+        
+    <string name="promocodedis"> Promotiecode </string>
+        
+    <string name="pleasecollect"> Gelieve geld in te zamelen van rijder </string>
+        
+    <string name="detail"> Detail </string>
+        
+    <string name="entercomment"> Reactie invoeren </string>
+        
+    <string name="usernotpaymentyet"> Gebruiker heeft nog niet betaald </string>
+        
+    <string name="payment"> Betaling </string>
+        
+    <string name="recivecash"> Je hebt de betaling contant ontvangen </string>
+        
+    <string name="givebywallet"> Gebruiker betaald per portemonnee. </string>
+        
+    <string name="givebycreditcard"> Gebruiker betaald met creditcard </string>
+        
+    <string name="toarrived"> Aangekomen bij afhaalpunt. </string>
+        
+    <string name="lastearning"> Last Trip </string>
+        
+    <string name="netearning"> Netto-inkomsten </string>
+        
+    <string name="todayearning"> Inkomsten van vandaag </string>
+        
+    <string name="estimatednet"> Geschat netwerk </string>
+        
+    <string name="tips"> Tips </string>
+        
+    <string name="todaytips"> Tips voor vandaag </string>
+        
+    <string name="trip"> Trip </string>
+        
+    <string name="all"> All </string>
+        
+    <string name="yourtranjection"> Uw transacties </string>
+        
+    <string name="withdra"> Geld opnemen </string>
+        
+    <string name="history"> Geschiedenis </string>
+        
+    <string name="driver"> Driver </string>
+        
+    <string name="help"> Help </string>
+        
+    <string name="personal"> Persoonlijk </string>
+        
+    <string name="cashout"> Uitbetalen </string>
+        
+    <string name="redeem"> Inwisselen </string>
+        
+    <string name="bankname"> Bankrouteringsnummer </string>
+        
+    <string name="accountno"> Accountnummer </string>
+        
+    <string name="ammount"> Bedrag </string>
+        
+    <string name="fullname"> Volledige naam </string>
+        
+    <string name="postcode"> Postcode </string>
+        
+    <string name="transferout"> Transfer Out </string>
+        
+    <string name="ridedetail"> Ritdetail </string>
+        
+    <string name="bookingno"> Boekings-id </string>
+        
+    <string name="notactive"> Wacht tot uw account wordt geverifieerd. </string>
+        
+    <string name="favuser"> Favoriete gebruikers </string>
+    <string name="enteramount"> Voer het bedrag in </string>
+        
+    <string name="performance"> Prestaties </string>
+        
+    <string name="trasaction"> Transacties </string>
+        
+    <string name="alreadylog"> Je bent ingelogd vanaf een ander apparaat. Wilt u zich afmelden bij het andere apparaat? </string>
+        
+    <string name="appupdateneed"> Nieuwe versie beschikbaar. Werk bij voordat u doorgaat </string>
+        
+    <string name="remindlater"> Herinner me later </string>
+        
+    <string name="updatewallet"> Je portemonneebedrag is te laag voor cashritten, houd een saldo van 20 $ aan voor cashritten. </string>
+        
+    <string name="later"> Later </string>
+        
+    <string name="dropadd"> Nieuw afleverpunt is toegevoegd door de passagier </string>
+        
+    <string name="servererror"> Serverfout, probeer het later opnieuw </string>
+        
+    <string name="checkpassreslink"> Controleer je e-mail om het wachtwoord opnieuw in te stellen </string>
+        
+    <string name="emailnotext"> Deze e-mail-ID bestaat niet </string>
+        
+    <string name="discountapp"> Korting toegepast: </string>
+        
+    <string name="colectmoneyfromrider"> Gelieve geld in te zamelen van rijder </string>
+        
+    <string name="amountaddwallet"> Bedrag wordt toegevoegd aan je portemonnee </string>
+        
+    <string name="cardrideamountaddwallet"> Bedrag wordt toegevoegd aan je portemonnee </string>
+        
+    <string name="selloc"> Selecteer een locatie </string>
+        
+    <string name="selservicetype"> Selecteer een servicetype </string>
+        
+    <string name="inroute"> Enroute </string>
+        
+    <string name="picpassenger"> Pickup Passenger </string>
+        
+    <string name="ontheway"> Onderweg </string>
+        
+    <string name="startnavigation"> Start navigatie </string>
+        
+    <string name="googlemap"> Google Map </string>
+        
+    <string name="waze"> Waze </string>
+        
+    <string name="addinwalletforcardride"> Voeg bedrag toe aan je portemonnee voor ritten met kaartbetalingen. </string>
+        
+    <string name="paidforride"> het bedrag dat je hebt betaald voor je kaarttype rit </string>
+        
+    <string name="addedtoyourwallet"> Voeg bedrag toe aan je portemonnee. </string>
+        
+    <string name="addinwalletforwallettyperide"> Bedrag toegevoegd voor portemonnee rit. </string>
+        
+    <string name="amountdeductforwalletride"> Bedrag is afgetrokken voor wallet ride </string>
+        
+    <string name="deductfromwalletforcashride"> Bedrag is afgetrokken voor contant geld. </string>
+        
+    <string name="today"> Vandaag </string>
+        
+    <string name="week"> Week </string>
+        
+    <string name="month"> Maand </string>
+        
+    <string name="todaytotalride"> Het totale aantal ritten van vandaag: </string>
+        
+    <string name="todaytotalearning"> Inkomsten van vandaag: </string>
+        
+    <string name="todayacceptride"> Vandaag geaccepteerde ritten: </string>
+        
+    <string name="todaycanceledride"> Vandaag geannuleerde ritten: </string>
+
+    <string name="weektotalride"> Wekelijkse totale ritten: </string>
+        
+    <string name="weektotalearning"> Wekelijkse totale inkomsten: </string>
+        
+    <string name="weekacceptride"> Wekelijks geaccepteerde ritten: </string>
+        
+    <string name="weekcanceledride"> Week geannuleerde ritten: </string>
+
+        
+    <string name="monthtotalride"> Maandelijks totaal aantal ritten: </string>
+        
+    <string name="monthtotalearning"> Maandelijkse totale inkomsten: </string>
+        
+    <string name="monthacceptride"> Maandelijks geaccepteerde ritten: </string>
+        
+    <string name="monthcanceledride"> Maand geannuleerde ritten: </string>
+        
+    <string name="expresspay"> Express Pay </string>
+        
+    <string name="expresspaycharge"> Er wordt $ 0,50 in rekening gebracht wanneer u een snelle betaling selecteert. </string>
+        
+    <string name="withdrawamountisgreater"> Uw portemonnee is lager dan uw geldopname-verzoek </string>
+        
+    <string name="yourrequestsendtoadmin"> Je intrekkingsverzoek is naar de boekhouding gestuurd. Wacht op de bevestiging van de beheerder </string>
+        
+    <string name="alreadyonerequestisprocessing"> Een intrekkingsverzoek wordt al verwerkt. </string>
+        
+    <string name="bookingrequest"> Boekingsverzoek </string>
+        
+    <string name="newdroppointadded"> Nieuwe afleverlocatie toegevoegd </string>
+        
+    <string name="bookingrequestcanceledbyuser"> Boekingsverzoek is geannuleerd door gebruiker </string>
+        
+    <string name="droplocationupdated"> Afleverlocatie is bijgewerkt door gebruiker </string>
+        
+    <string name="emailalreadyexist"> Er is al een account met deze e-mail geregistreerd </string>
+        
+    <string name="mobilealreadyexist"> Er is al een account met dit telefoonnummer geregistreerd </string>
+        
+    <string name="confirm"> Bevestig </string>
+        
+    <string name="resndotp"> otp opnieuw verzenden </string>
+        
+    <string name="plsenterotp"> Voer otp-nummer in </string>
+        
+    <string name="enterotp"> Voer Otp in </string>
+        
+    <string name="otpnotmatch"> Otp komt niet overeen </string>
+        
+    <string name="mobilenumber"> Mobiel nummer </string>
+        
+    <string name="sessionexpired"> Sessie verlopen </string>
+        
+    <string name="newmessagecome"> Bericht van berijder </string>
+        
+    <string name="typemessage"> Typ bericht … </string>
+        
+    <string name="collectmoney"> Betaling innen </string>
+        
+    <string name="support"> Ondersteuning </string>
+        
+    <string name="supportmessage"> Ondersteuningsbericht </string>
+    <string name="invoice"> Factuur </string>
+        
+    <string name="notification"> Melding </string>
+        
+    <string name="newnotificationfromadmin"> Melding van beheerder </string>
+        
+    <string name="bookingcharge"> Boekingskosten </string>
+        
+    <string name="distance"> Afstand </string>
+        
+    <string name="tip"> Tip </string>
+        
+    <string name="somethigwroninusercardpayment"> Gelieve de betaling contant te innen bij de rijder omdat de kaartbetaling een probleem heeft. </string>
+        
+    <string name="countrycodestr"> Landcode (bijv. VS) </string>
+        
+    <string name="address"> Voer adres in </string>
+        
+    <string name="city"> Stad </string>
+        
+    <string name="state"> Staat </string>
+        
+    <string name="enterstatename"> Voer de naam van de staat in. </string>
+        
+    <string name="updateprofile"> Je profiel is onvolledig, dus update het. </string>
+        
+    <string name="entercityname"> Voer plaatsnaam in </string>
+        
+    <string name="nightcharge"> Night Charge </string>
+        
+    <string name="servicetax"> Servicebelasting </string>
+        
+    <string name="paymenttype_txt"> Type betaling: </string>
+        
+    <string name="walletbalance"> Wallet-saldo $ 0,00 </string>
+        
+    <string name="bankdetails"> Bankgegevens </string>
+        
+    <string name="tripstatics"> Rapporten verdienen </string>
+        
+    <string name="riderfeedback"> Feedback van ruiter </string>
+        
+    <string name="emergencycontact"> Contactpersoon voor noodgevallen </string>
+        
+    <string name="yourtrips"> Je reizen </string>
+        
+    <string name="invitefriends"> Vrienden uitnodigen </string>
+        
+    <string name="managedocuments"> Documenten beheren </string>
+        
+    <string name="managevehicles"> Voertuigen beheren </string>
+        
+    <string name="myvehicle"> Mijn voertuig </string>
+        
+    <string name="addvehicleimage"> Voertuigafbeelding toevoegen </string>
+        
+    <string name="vehiclename"> Merknaam voertuig </string>
+        
+    <string name="viechlenumber"> VIN-nummer </string>
+        
+    <string name="vehiclemodelyear"> Voertuigjaar </string>
+        
+    <string name="vehiclecolor"> Vehicle Color </string>
+        
+    <string name="addvehicle"> Voertuig toevoegen </string>
+        
+    <string name="myvehicledetail"> Voertuigdetail </string>
+        
+    <string name="updatevehicle"> Voertuig bijwerken </string>
+        
+    <string name="yourvehicleupdateedsucc"> Je voertuigdetail is succesvol bijgewerkt </string>
+        
+    <string name="novehicladded"> Geen voertuig toegevoegd </string>
+        
+    <string name="yourvehicleaddedsucc"> uw voertuig is succesvol toegevoegd </string>
+        
+    <string name="sharetxt"> Installeer deze applicatie vanuit Google Play Store met mijn verwijzing </string>
+        
+    <string name="sharerefer"> Deel uw verwijzingscode </string>
+        
+    <string name="friendearn"> Verdien vriend </string>
+        
+    <string name="invitefriend"> Vriend uitnodigen </string>
+        
+    <string name="allfields"> Alle velden zijn verplicht </string>
+        
+    <string name="emergencycontactcap"> NOODCONTACT </string>
+        
+    <string name="notecontact"> Opmerking: uw contactpersoon kan alleen worden gewaarschuwd na verificatie. </string>
+        
+    <string name="successmsg"> Rapport is succesvol ingediend. </string>
+        
+    <string name="enteremail"> Voer e-mail-ID in </string>
+    <string name="removecontact"> Contactpersoon verwijderen </string>
+        
+    <string name="emergencyadd"> Contact voor noodgevallen is succesvol opgeslagen </string>
+        
+    <string name="edit"> Bewerken </string>
+        
+    <string name="success"> Succes </string>
+        
+    <string name="sorry"> Sorry </string>
+        
+    <string name="name"> Naam </string>
+        
+    <string name="emailid"> E-mailadres </string>
+        
+    <string name="notealertemer"> Opmerking: uw contactpersoon kan alleen worden gewaarschuwd na verificatie. </string>
+        
+    <string name="accountholdername"> Naam rekeninghouder </string>
+        
+    <string name="accountholderaddress"> Adres rekeninghouder </string>
+        
+    <string name="accountnumber"> Accountnummer </string>
+        
+    <string name="branchname"> Filiaalnaam </string>
+        
+    <string name="branchaddress"> Vestigingsadres </string>
+        
+    <string name="ifsccode"> IFSC-code </string>
+        
+    <string name="routingnumber"> Routingnummer </string>
+        
+    <string name="bankaccount"> Bankrekening </string>
+        
+    <string name="enterholdername"> Voer de naam van de accounthouder in </string>
+        
+    <string name="holderaddress"> Voer het adres van de rekeninghouder in </string>
+        
+    <string name="enteraccountnumber"> Voer accountnummer in </string>
+        
+    <string name="enterbankname"> Voer banknaam in </string>
+        
+    <string name="enterbranchname"> Voer filiaalnaam in </string>
+        
+    <string name="enterbranchaddress"> Voer het filiaaladres in </string>
+        
+    <string name="enterifccode"> IFSC-code invoeren </string>
+        
+    <string name="enterroutingnum"> Voer het routeringsnummer in </string>
+        
+    <string name="accountadedsucc"> Uw bankrekening is succesvol toegevoegd. </string>
+        
+    <string name="accountupdated"> Account is succesvol bijgewerkt </string>
+        
+    <string name="nofeedback"> Geen feedback beschikbaar </string>
+        
+    <string name="aboutus"> Over ons </string>
+        
+    <string name="privacypolicy"> Privacybeleid </string>
+        
+    <string name="termscondition"> Algemene voorwaarden </string>
+        
+    <string name="positive"> Positief </string>
+        
+    <string name="neutral"> Neutraal </string>
+        
+    <string name="negative"> Negatief </string>
+        
+    <string name="vehiclemodel"> Voertuignaam </string>
+        
+    <string name="vehiclemake"> Voertuigmerk </string>
+        
+    <string name="licenseplate"> Nummerplaat </string>
+        
+    <string name="entervehiclemake"> Voertuigmerk invoeren </string>
+        
+    <string name="enterlicennumber"> Voer licentienummer in </string>
+        
+    <string name="plsraterider"> Beoordeel de rijder </string>
+        
+    <string name="cardnameempty"> Kaartnaam mag niet leeg zijn </string>
+        
+    <string name="cardnumnotempty"> Kaartnummer mag niet leeg zijn </string>
+        
+    <string name="expdatenotempty"> Vervaldatum mag niet leeg zijn </string>
+        
+    <string name="yearnotempty"> Jaar mag niet leeg zijn </string>
+    <string name="seccodenotempty"> Beveiligingscode mag niet leeg zijn </string>
+        
+    <string name="checknetworkconnection"> Controleer de netwerkverbinding </string>
+        
+    <string name="paymentaddsucc"> Betaling toegevoegd </string>
+        
+    <string name="cardinfowrong"> Kaartgegevens zijn verkeerd </string>
+        
+    <string name="chkserver"> Oeps !! Controleer de serververbinding </string>
+        
+    <string name="securitynotempety"> Beveiligingscode mag niet leeg zijn. </string>
+        
+    <string name="cardnumberwrong"> Kaartnummer is verkeerd. </string>
+        
+    <string name="cvvwrong"> Verkeerde beveiligingscode. </string>
+        
+    <string name="wrongexpyear"> Verkeerd vervaljaar </string>
+        
+    <string name="wrongexpmonth"> Verkeerde vervalmaand </string>
+
+
+        
+    <string name="entercardname"> Voer kaartnaam in </string>
+        
+    <string name="entercardnumber"> Voer geldig kaartnummer in </string>
+        
+    <string name="selectexpdate"> Selecteer de vervaldatum </string>
+        
+    <string name="selexpyear"> Selecteer Vervaljaar </string>
+        
+    <string name="cardnumberisnotvalid"> Kaartnummer is niet geldig </string>
+        
+    <string name="cardaddedsuc"> Je kaart is succesvol toegevoegd. </string>
+        
+    <string name="cardupdate"> Kaart is bijgewerkt </string>
+        
+    <string name="deletecard"> Kaart verwijderen </string>
+        
+    <string name="cardremove"> Kaartdetail is verwijderd. </string>
+        
+    <string name="expirydate"> Vervaldatum </string>
+        
+    <string name="cardupdatedsucc"> Kaart succesvol geüpdatet </string>
+        
+    <string name="somethingwrong"> Er is iets mis. </string>
+        
+    <string name="updatecards"> Kaart updaten </string>
+        
+    <string name="validtill"> Verloopt </string>
+        
+    <string name="updatecard"> Update een creditcard of betaalpas </string>
+        
+    <string name="selectcard"> Selecteer kaart </string>
+        
+    <string name="amountaddedinyourwallet"> Bedrag toegevoegd in je portemonnee </string>
+        
+    <string name="addamount"> Bedrag toevoegen </string>
+
+        
+    <string name="savecard"> Kaart opslaan </string>
+        
+    <string name="cards"> Kaart toevoegen </string>
+        
+    <string name="removecard"> Kaart verwijderen </string>
+        
+    <string name="yourcarddetailsaved"> Uw kaartgegevens zijn succesvol opgeslagen </string>
+        
+    <string name="cardupdated"> Kaartgegevens bijgewerkt. </string>
+        
+    <string name="cardremoved"> Kaart verwijderd. </string>
+        
+    <string name="pleaseaddcarddetail"> Voeg geldige kaartgegevens toe voor kaartbetaling. </string>
+        
+    <string name="cvv"> CVV </string>
+        
+    <string name="mycards"> Mijn kaart </string>
+        
+    <string name="time"> Tijd </string>
+        
+    <string name="payout"> Uitbetaling </string>
+        
+    <string name="add_payout"> Uitbetaling toevoegen </string>
+        
+    <string name="select_date"> Selecteer datum </string>
+    <string name="title"> titel </string>
+        
+    <string name="amount"> Bedrag </string>
+        
+    <string name="description"> description </string>
+        
+    <string name="chagne_language"> Wijzig taal </string>
+        
+    <string name="required"> Vereist </string>
+        
+    <string name="plsselpicklocation"> Selecteer een ophaallocatie </string>
+        
+    <string name="seldroploc"> Selecteer een afleverlocatie </string>
+        
+    <string name="seldate"> Selecteer datum </string>
+        
+    <string name="seltime"> Selecteer tijd </string>
+        
+    <string name="enter_mobile_number"> Voer mobiel nummer in </string>
+        
+    <string name="verify"> Verifieer </string>
+        
+    <string name="enter_use_name"> Voer gebruiksnaam in </string>
+    <string name="total_ride">Total Ride</string>
+    <string name="total_earning">Total earnings:</string>
+    <string name="accepted_ride">Accepted Ride:</string>
+    <string name="canceled_ride">Canceled Ride:</string>
+    <string name="no_ride_details_found">No Ride Details Found</string>
+    <string name="parish">Parish</string>
+    <string name="vilage_town">Village/ Town</string>
+</resources>

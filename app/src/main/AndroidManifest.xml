@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="main.com.dashdriver">
+
+    <permission
+        android:name="main.com.dashdriver.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="main.com.dashdriver.permission.MAPS_RECEIVE" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="main.com.dashdriver.activity.PayoutActivity"></activity>
+        <activity
+            android:name="main.com.dashdriver.MainActivityDummy"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.ChatingAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.AddVehicle"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.AboutUsAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.PrivacyPolicyAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.TermsConditions"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.InviteEarnAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.EmergencyActivity"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.AddBankAccountAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.paymentclasses.SaveCardDetail"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.paymentclasses.MyCardsPayment"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.ManageDocumentAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.MyVehiclsAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.UpdateVehicle"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.ProfileAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.draweractivity.BaseActivity"
+            android:label=""
+             />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/googlekey" />
+
+        <activity android:name="main.com.dashdriver.activity.WelcomeAct" />
+        <activity android:name="main.com.dashdriver.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="main.com.dashdriver.activity.LoginAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.ForgotPassword"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.SetLocation"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.SignupActivity"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.PaymentAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.MainActivity"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.TripStatusAct"
+            android:label=""
+             />
+
+        <service
+            android:name="main.com.dashdriver.service.TrackingService"
+            android:enabled="true" />
+
+        <receiver android:name="main.com.dashdriver.constant.MyReceiver" />
+
+        <service
+            android:name="main.com.dashdriver.service.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name="main.com.dashdriver.activity.DashBoardAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.TransectionHistory"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.RideHistory"
+             />
+        <activity
+            android:name="main.com.dashdriver.paymentclasses.ConfirmPayment"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.RideDetailAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.WalletAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.WithdrawMoney"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.CashOutAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.FavoriteUserAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.MobileVerificationActivity"
+             />
+
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+        <meta-data
+            android:name="com.facebook.accountkit.FacebookAppEventsEnabled"
+            android:value="false" />
+
+        <activity
+            android:name="com.facebook.accountkit.ui.AccountKitActivity"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.PerformanceAct"
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.SupportAct"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.InvoiceActivity"
+            android:label=""
+             />
+        <activity
+            android:name="main.com.dashdriver.activity.NotificationAct"
+            android:label="" />
+        <activity
+            android:name="main.com.dashdriver.paymentclasses.CreateCustomerFromCard"
+            android:label="" />
+        <activity android:name="main.com.dashdriver.activity.RiderFeedbackAct" />
+        <activity android:name="main.com.dashdriver.activity.BookingActivity" />
+    </application>
+
+</manifest>

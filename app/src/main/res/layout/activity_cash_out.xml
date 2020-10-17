@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    tools:context="main.com.dashdriver.activity.CashOutAct">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/toobarcolor"
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/CustomTheme" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back" />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="55dp"
+            android:id="@+id/titletext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/cashout"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/medium" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainlay"
+        android:fillViewport="true">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/transferout"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/large" />
+
+                        <EditText
+                            android:id="@+id/fullname_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/border_grey_rec"
+                            android:gravity="center"
+                            android:hint="@string/fullname"
+
+                            android:padding="6dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium" />
+
+                        <EditText
+                            android:id="@+id/bankrouting_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/border_grey_rec"
+
+                            android:gravity="center"
+                            android:hint="@string/bankname"
+                            android:padding="6dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium" />
+
+                        <EditText
+                            android:id="@+id/accountnumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:inputType="number"
+                            android:background="@drawable/border_grey_rec"
+                            android:gravity="center"
+                            android:hint="@string/accountno"
+                            android:padding="6dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium" />
+                        <EditText
+                            android:id="@+id/countrycode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:inputType="text"
+                            android:background="@drawable/border_grey_rec"
+                            android:gravity="center"
+                            android:hint="@string/countrycodestr"
+                            android:padding="6dp"
+                            android:maxLength="2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium" />
+
+                        <EditText
+                            android:id="@+id/amount_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/border_grey_rec"
+                            android:gravity="center"
+                            android:hint="@string/ammount"
+
+                            android:inputType="numberDecimal"
+                            android:padding="6dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium" />
+
+<CheckBox
+    android:id="@+id/express_checkout"
+    android:layout_gravity="center"
+    android:text="@string/expresspay"
+    android:layout_marginTop="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:text="@string/expresspaycharge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+
+
+                            <TextView
+                                android:id="@+id/submit_req"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/buttoncol"
+                                android:text="@string/submit"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
