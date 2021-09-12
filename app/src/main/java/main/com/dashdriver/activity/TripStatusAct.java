@@ -324,6 +324,7 @@ public class TripStatusAct extends AppCompatActivity implements OnMapReadyCallba
 
             }
         });
+
         googlemap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -342,6 +343,7 @@ public class TripStatusAct extends AppCompatActivity implements OnMapReadyCallba
 
             }
         });
+
         waze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -357,29 +359,25 @@ public class TripStatusAct extends AppCompatActivity implements OnMapReadyCallba
                             Uri.parse(uri)));
                 }
 
-
-                //String uri = "geo: latitude,longtitude";
+                // String uri = "geo: latitude,longtitude";
 
             }
         });
 
         dialogSts.show();
 
-
     }
 
     @Override
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     private void areUsureEnd(final String status) {
-        //   Log.e("War Msg in dialog", war_msg);
+        // Log.e("War Msg in dialog", war_msg);
         final Dialog canceldialog = new Dialog(TripStatusAct.this);
         canceldialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         canceldialog.setCancelable(false);
         canceldialog.setContentView(R.layout.bookig_cancel_me_lay);
         canceldialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
 
         final TextView yes_tv = (TextView) canceldialog.findViewById(R.id.yes_tv);
         final TextView message_tv = (TextView) canceldialog.findViewById(R.id.message_tv);
@@ -408,7 +406,6 @@ public class TripStatusAct extends AppCompatActivity implements OnMapReadyCallba
                 Log.e("TIME ZONE ID>>", tz.getID());
                 time_zone = tz.getID();
 
-
                 new ResponseToRequest().execute(Status_Chk);
                 canceldialog.dismiss();
 
@@ -420,8 +417,8 @@ public class TripStatusAct extends AppCompatActivity implements OnMapReadyCallba
                 canceldialog.dismiss();
             }
         });
-        canceldialog.show();
 
+        canceldialog.show();
 
     }
 

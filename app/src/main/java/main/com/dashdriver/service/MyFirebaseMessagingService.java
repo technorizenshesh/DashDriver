@@ -1,9 +1,5 @@
 package main.com.dashdriver.service;
 
-/**
- * Created by ritesh on 20/3/17.
- */
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -36,8 +32,8 @@ import main.com.dashdriver.utils.NotificationUtils;
 
 import static main.com.dashdriver.utils.NotificationUtils.isAppIsInBackground;
 
-
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
+
     private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
     private NotificationUtils notificationUtils;
     public static String notification_data = "";
@@ -53,6 +49,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         registrationComplete.putExtra("token", refreshedToken);
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
     }
+
     private void sendRegistrationToServer(final String token) {
         Log.e(TAG, "sendRegistrationToServer: " + token);
     }

@@ -65,6 +65,7 @@ import main.com.dashdriver.draweractivity.BaseActivity;
 public class MainActivityDummy extends BaseActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
         com.google.android.gms.location.LocationListener,
         ResultCallback<LocationSettingsResult> {
+
     private Integer THRESHOLD = 2;
     private int count = 0, countDrop = 0;
     private FrameLayout contentFrameLayout;
@@ -90,6 +91,7 @@ public class MainActivityDummy extends BaseActivity implements OnMapReadyCallbac
     private TextView booknow,bookletter;
     private RecyclerView cartypelist;
     CarHoriZontalLay carHoriZontalLay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

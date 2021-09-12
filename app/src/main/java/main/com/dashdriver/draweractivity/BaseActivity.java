@@ -357,6 +357,7 @@ private String user_log_data="",user_id="";
                     postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
                 }
                 String urlParameters = postData.toString();
+                Log.e("Logout",postReceiverUrl+urlParameters);
                 URLConnection conn = url.openConnection();
                 conn.setDoOutput(true);
                 OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());

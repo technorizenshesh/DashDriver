@@ -76,6 +76,7 @@ import main.com.dashdriver.utils.NotificationUtils;
 import www.develpoeramit.mapicall.ApiCallBuilder;
 
 public class PaymentAct extends AppCompatActivity {
+
     private ProgressBar progressbar;
     private RelativeLayout exit_app_but;
     private TextView servicetax,nightcharge,tipamount, discount_type, paymentmessage, time_tv, date_tv, total_fare, payment_type, carcharge, cullectpayment, basefare, timefare, distancefare, distance;
@@ -92,21 +93,22 @@ public class PaymentAct extends AppCompatActivity {
     ScheduledExecutorService scheduleTaskExecutor;
     private String language = "";
     MyLanguageSession myLanguageSession;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         myLanguageSession = new MyLanguageSession(this);
         language = myLanguageSession.getLanguage();
+
         myLanguageSession.setLangRecreate(myLanguageSession.getLanguage());
+
         setContentView(R.layout.activity_payment);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (myLanguageSession.getLanguage().equalsIgnoreCase("ar")) {
                 getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             } else {
                 getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             }
-        }
-        progressDialog = new ProgressDialog(this);
+
         ac_dialog = new ACProgressCustom.Builder(this)
                 .direction(ACProgressConstant.DIRECT_CLOCKWISE)
                 .themeColor(Color.WHITE)
@@ -128,7 +130,8 @@ public class PaymentAct extends AppCompatActivity {
                 if (intent.getAction().equals(Config.REGISTRATION_COMPLETE)) {
                     FirebaseMessaging.getInstance().subscribeToTopic(Config.TOPIC_GLOBAL);
 
-                } else if (intent.getAction().equals(Config.PUSH_NOTIFICATION)) {
+                }
+                else if (intent.getAction().equals(Config.PUSH_NOTIFICATION)) {
                     String message = intent.getStringExtra("message");
                     Log.e("Push notification: ", "" + message);
                     JSONObject data = null;
@@ -172,12 +175,11 @@ public class PaymentAct extends AppCompatActivity {
             public void run() {
                 new GetPaymentTwo().execute();
             }
-        }, 5, 7, TimeUnit.SECONDS);
+      }, 5, 7, TimeUnit.SECONDS);
     }
 
     @Override
-    public void onPause()
-    {
+    public void onPause() {
         LocalBroadcastManager.getInstance(PaymentAct.this).unregisterReceiver(mRegistrationBroadcastReceiver);
         super.onPause();
         if (scheduleTaskExecutor == null) {
@@ -186,117 +188,38 @@ public class PaymentAct extends AppCompatActivity {
         }
     }
 
-
     private void clickevent() {
+
         exit_app_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
         cullectpayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rating = ratingbar.getRating();
                 comment_str = comment_et.getText().toString();
-                if (comment_str.equalsIgnoreCase("")){
-                    Toast.makeText(PaymentAct.this, getResources().getString(R.string.plsraterider), Toast.LENGTH_LONG).show();
-                } else {
-                    Calendar c = Calendar.getInstance();
-                    TimeZone tz = c.getTimeZone();
-                    time_zone = tz.getID();
-                    if (payment_type_str != null && payment_type_str.equalsIgnoreCase("Card")) {
-                        finishpaymentwithStrip();
-                    } else {
-                        new SubmitPayment().execute();
-                    }
-                }
-
-
+                Calendar c = Calendar.getInstance();
+                TimeZone tz = c.getTimeZone();
+                time_zone = tz.getID();
+                SubmitPayment();
+//                if (comment_str.equalsIgnoreCase("")) {
+//                    Toast.makeText(PaymentAct.this, getResources().getString(R.string.plsraterider), Toast.LENGTH_LONG).show();
+//                } else {
+//
+//                }
             }
         });
-    }
-    private class ConfirmPayment extends AsyncTask<String, String, String> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            if (ac_dialog != null) {
-                ac_dialog.show();
-            }
-            try {
-                super.onPreExecute();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-//http://mobileappdevelop.co/NAXCAN/webservice/pay_request_update?request_id=439&status=Confirm
-            try {
-                String postReceiverUrl = BaseUrl.baseurl + "pay_request_update?";
-                URL url = new URL(postReceiverUrl);
-                Map<String, Object> params = new LinkedHashMap<>();
-
-
-                params.put("request_id", MainActivity.request_id);
-                params.put("status", strings[0]);
-                Log.e("STATUS >>", "" + strings[0]);
-                Log.e("request_id >>", "" + MainActivity.request_id);
-
-
-                StringBuilder postData = new StringBuilder();
-                for (Map.Entry<String, Object> param : params.entrySet()) {
-                    if (postData.length() != 0) postData.append('&');
-                    postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
-                    postData.append('=');
-                    postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
-                }
-                String urlParameters = postData.toString();
-                URLConnection conn = url.openConnection();
-                conn.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-                writer.write(urlParameters);
-                writer.flush();
-                String response = "";
-                String line;
-                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                while ((line = reader.readLine()) != null) {
-                    response += line;
-                }
-                writer.close();
-                reader.close();
-                Log.e("Json Confirm End", ">>>>>>>>>>>>" + response);
-                return response;
-            } catch (UnsupportedEncodingException e1) {
-
-                e1.printStackTrace();
-            } catch (IOException e1) {
-
-                e1.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            if (ac_dialog != null) {
-                ac_dialog.dismiss();
-            }
-            if (result == null) {
-                Toast.makeText(PaymentAct.this, "Server Error,Please Try again..", Toast.LENGTH_LONG).show();
-            } else if (result.isEmpty()) {
-                Toast.makeText(PaymentAct.this, "Server Error,Please Try again..", Toast.LENGTH_LONG).show();
-
-            }
-        }
     }
 
     @Override
     public void onBackPressed() {
-        // super.onBackPressed();
+
     }
+
     private void ResponseToRequest(){
         HashMap<String, String> params = new HashMap<>();
         params.put("request_id", MainActivity.request_id);
@@ -320,221 +243,47 @@ public class PaymentAct extends AppCompatActivity {
         });
     }
 
-    private void finishpaymentwithStrip() {
-        progressbar.setVisibility(View.VISIBLE);
-        paymentwithcard();
 
 
-    }
+    private void SubmitPayment(){
+        HashMap<String,String>params=new HashMap<>();
+        params.put("request_id", MainActivity.request_id);
+        params.put("amount", amount_str);
+        params.put("car_charge", ""+car_charge_str);
+        params.put("rating", "" + rating);
+        params.put("discount", discount_str);
+        params.put("tip", tip_amount_str);
+        params.put("timezone", ""+time_zone);
+        params.put("review", ""+comment_str);
+        params.put("pay_type", payment_type_str);
+        ApiCallBuilder.build(this)
+                .setUrl(BaseUrl.baseurl + "add_payment?")
+                .isShowProgressBar(true)
+                .setParam(params)
+                .execute(new ApiCallBuilder.onResponse() {
+                    @Override
+                    public void Success(String response) {
+                        try {
+                            ResponseToRequest();
+                            Log.e("adadasdasd","ResponseToRequest");
+//                            JSONObject object = new JSONObject(response);
+//                            if (object.getString("status").equals("1")) {
+//                                ResponseToRequest();
+//                            } else {
+//                                ResponseToRequest();
+//                                // Toast.makeText(PaymentAct.this, "User Payment not done.. wait a moment", Toast.LENGTH_SHORT).show();
+//                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
-    private void paymentwithcard() {
-        // Tag used to cancel the request
-        if (Utils.isConnected(getApplicationContext())) {
-            Paymentjsontask task = new Paymentjsontask();
-            task.execute();
+                    }
 
-        } else {
-            Toast.makeText(getApplicationContext(), "Please Cheeck network conection..", Toast.LENGTH_SHORT).show();
-        }
-    }
+                    @Override
+                    public void Failed(String error) {
 
-    private void showDialog() {
-        if (!progressDialog.isShowing())
-            progressDialog.show();
-    }
-
-    private void hideDialog() {
-        if (progressDialog.isShowing())
-            progressDialog.dismiss();
-
-    }
-
-    public void onClickSomething(String cardNumber, int cardExpMonth, int cardExpYear, String cardCVC) {
-        Card card = new Card(cardNumber, cardExpMonth, cardExpYear, cardCVC);
-        card.validateNumber();
-        card.validateCVC();
-        card.validateCard();
-        card.validateExpMonth();
-        card.validateExpiryDate();
-    }
-
-    public class Paymentjsontask extends AsyncTask<String, Void, String> {
-        boolean iserror = false;
-        String result = "";
-
-        @Override
-        protected void onPreExecute() {
-            // TODO Auto-generated method stub
-            super.onPreExecute();
-            String cancel_req_tag = "paymentin";
-            progressDialog.setMessage("Payment you in...");
-            showDialog();
-        }
-
-        @SuppressWarnings("deprecation")
-        @Override
-        protected String doInBackground(String... params) {
-            HostnameVerifier hostnameVerifier = SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
-            DefaultHttpClient client = new DefaultHttpClient();
-            SchemeRegistry registry = new SchemeRegistry();
-            SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
-            socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
-            registry.register(new Scheme("https", socketFactory, 443));
-            SingleClientConnManager mgr = new SingleClientConnManager(client.getParams(), registry);
-            DefaultHttpClient httpClient = new DefaultHttpClient(mgr, client.getParams());
-            HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
-            // HttpPost post = new HttpPost(BaseUrl.baseurl+"strips_payment?payment_type=Card&currency=USD&amount="+pack_price+"&user_id="+user_id+"&token="+token_id);
-            HttpPost post = new HttpPost(BaseUrl.baseurl + "strips_payment?transaction_type=ride_payment&payment_type=Card&currency=USD&amount=" + amount_str+"&discount="+discount_str+ "&user_id=" + rider_id + "&token=" + token_id + "&request_id=" + MainActivity.request_id + "&rating=&review=" + comment_str + "&car_charge=" + car_charge_str + "&tip=" + tip_amount_str + "&time_zone=" + time_zone+"&customer="+customer_id);
-            Log.e("STRIPEURL >> ", " >> " + BaseUrl.baseurl + "strips_payment?transaction_type=ride_payment&payment_type=Card&currency=USD&amount=" + amount_str + "&user_id=" + rider_id + "&token=" + token_id + "&request_id=" + MainActivity.request_id + "&rating=&review=" + comment_str + "&car_charge=" + car_charge_str + "&tip=" + tip_amount_str + "&time_zone=" + time_zone+"&customer="+customer_id);
-
-            try {
-                HttpResponse response = client.execute(post);
-                String object = EntityUtils.toString(response.getEntity());
-                System.out.println("#####object=" + object);
-                //JSONArray js = new JSONArray(object);
-                JSONObject jobect1 = new JSONObject(object);
-                result = jobect1.getString("message");
-                if (result.equalsIgnoreCase("payment successfull")) {
-                    String details = jobect1.getString("result");
-                    Log.e("details payment", " ..> " + details);
-                }
-            } catch (Exception e) {
-                Log.v("22", "22" + e.getMessage());
-                e.printStackTrace();
-                iserror = true;
-            }
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute(String result1) {
-            // TODO Auto-generated method stub
-            super.onPostExecute(result1);
-            hideDialog();
-            if (iserror == false) {
-                if (result.equalsIgnoreCase("payment successfull")) {
-                    ResponseToRequest();
-                    finish();
-                } else {
-                    pleaseCollectPaymentByCash();
-                }
-            } else {
-                Toast.makeText(getApplicationContext(), "Oops!! Please check server connection .",
-                        Toast.LENGTH_SHORT).show();
-            }
-        }
-
-    }
-    private void pleaseCollectPaymentByCash() {
-        final Dialog canceldialog = new Dialog(PaymentAct.this);
-        canceldialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        canceldialog.setCancelable(false);
-        canceldialog.setContentView(R.layout.surecancelride_lay);
-        canceldialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-
-        final TextView yes_tv =  canceldialog.findViewById(R.id.yes_tv);
-        final TextView message_tv =  canceldialog.findViewById(R.id.message_tv);
-        message_tv.setText(""+getResources().getString(R.string.somethigwroninusercardpayment));
-
-
-        yes_tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (NotificationUtils.r != null && NotificationUtils.r.isPlaying()) {
-                    NotificationUtils.r.stop();
-                }
-new SubmitPaymentWhenCardPaymentFail().execute();
-                canceldialog.dismiss();
-
-            }
-        });
-        canceldialog.show();
-
-
-    }
-
-    private class SubmitPaymentWhenCardPaymentFail extends AsyncTask<String, String, String> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressbar.setVisibility(View.VISIBLE);
-/*
-            if(ac_dialog!=null){
-                ac_dialog.show();
-            }
-*/
-
-            try {
-                super.onPreExecute();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            try {
-//http://hitchride.net/webservice/add_payment?request_id=44&amount=13.55&car_charge=5&rating=4&review=nice
-                String postReceiverUrl = BaseUrl.baseurl + "add_payment?";
-                URL url = new URL(postReceiverUrl);
-                Map<String, Object> params = new LinkedHashMap<>();
-                params.put("request_id", MainActivity.request_id);
-                params.put("amount", amount_str);
-
-                params.put("discount", discount_str);
-                params.put("car_charge", car_charge_str);
-                params.put("rating", "");
-                params.put("tip", tip_amount_str);
-                params.put("timezone", time_zone);
-                params.put("payment_type", "Cash");
-                if (comment_str == null) {
-                    params.put("review", "");
-                } else {
-                    params.put("review", "");
-                }
-
-                StringBuilder postData = new StringBuilder();
-                for (Map.Entry<String, Object> param : params.entrySet()) {
-                    if (postData.length() != 0) postData.append('&');
-                    postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
-                    postData.append('=');
-                    postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
-                }
-                String urlParameters = postData.toString();
-                URLConnection conn = url.openConnection();
-                conn.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-                writer.write(urlParameters);
-                writer.flush();
-                String response = "";
-                String line;
-                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                while ((line = reader.readLine()) != null) {
-                    response += line;
-                }
-                writer.close();
-                reader.close();
-                return response;
-            } catch (UnsupportedEncodingException e1) {
-                e1.printStackTrace();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            progressbar.setVisibility(View.GONE);
-            Log.e("SUBMIT PAYMENT RESULT", " >> " + result);
-            if (result == null) {
-            } else if (result.isEmpty()) {
-            } else {
-                ResponseToRequest();
-            }
-        }
+                    }
+                });
     }
     private class SubmitPayment extends AsyncTask<String, String, String> {
         @Override
@@ -837,7 +586,6 @@ new SubmitPaymentWhenCardPaymentFail().execute();
         @Override
         protected String doInBackground(String... strings) {
             try {
-//http://mobileappdevelop.co/NAXCAN/webservice/get_payment?request_id=1
                 String postReceiverUrl = BaseUrl.baseurl + "get_payment?";
                 URL url = new URL(postReceiverUrl);
                 Map<String, Object> params = new LinkedHashMap<>();

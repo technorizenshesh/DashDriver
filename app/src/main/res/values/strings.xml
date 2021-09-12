@@ -2,8 +2,12 @@
     <string name="app_name" translatable="false">DASH Driver</string>
     <string name="app_name_cap" translatable="false">DASH Driver</string>
 
+<!--    dashdominica767@gmail.com-->
+<!--    DashDominica!*-->
+
+    <string name="googlekeyNew" translatable="false">AIzaSyDHzbqstWXpYy7ce4IN-J-2YYKBxKrE2dk</string>
     <string name="googlekey" translatable="false">AIzaSyAN88JhZJmgIFhFj0czf9zJKua_P4EPkGs</string>
-    <string name="googlekey_other" translatable="false">AIzaSyCct-fQlzaGlvSPw9eK0OrjhR-W83AfeVE</string>
+    <string name="googlekey_other" translatable="false">AIzaSyB1yWUxDg9DoFbcPFMgORaTbYPtQ2jIjwQ</string>
     <string name="FACEBOOK_APP_ID" translatable="false">1941193059506768</string>
     <string name="facebook_app_id" translatable="false">1941193059506768</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN" translatable="false">51c17c549405876879cb48033cfe0c03</string>

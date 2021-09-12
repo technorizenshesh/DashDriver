@@ -28,6 +28,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.StringRequestListener;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -49,6 +52,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -69,6 +73,7 @@ import main.com.dashdriver.constant.MySession;
 import main.com.dashdriver.utils.NotificationUtils;
 
 public class ChatingAct extends AppCompatActivity {
+
     private RelativeLayout exit_app_but;
     private ListView chatlist;
     private TextView send_tv, titletext;
@@ -79,12 +84,14 @@ public class ChatingAct extends AppCompatActivity {
     ScheduledExecutorService scheduleTaskExecutor;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     ConversessionAdapter conversessionAdapter;
-    public String image_url="",firstname_str="",lastname_str="",date_time = "", user_log_data = "", time_zone = "", request_id = "", user_id = "", receiver_id = "", receiver_img = "", receiver_name = "";
+    public String image_url="",firstname_str="",lastname_str="",
+            date_time = "", user_log_data = "", time_zone = "", request_id = "",
+            user_id = "", receiver_id = "", receiver_img = "", receiver_name = "";
     int beforelength = 0;
     ImageView camera_img;
-    private boolean prosts=false;
+    private boolean prosts = false;
     ProgressBar prgressbar;
-    public static boolean isInFront =false;
+    public static boolean isInFront = false;
     private RelativeLayout bottumlay;
     private CircleImageView chatuser_img;
     private String language = "";
@@ -96,8 +103,7 @@ public class ChatingAct extends AppCompatActivity {
         myLanguageSession = new MyLanguageSession(this);
         language = myLanguageSession.getLanguage();
         myLanguageSession.setLangRecreate(myLanguageSession.getLanguage());
-
-
+        
         setContentView(R.layout.activity_chating);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (myLanguageSession.getLanguage().equalsIgnoreCase("ar")) {
@@ -225,6 +231,7 @@ Toast.makeText(ChatingAct.this,getResources().getString(R.string.typemessage),To
                     date_time = format.format(today);
                     System.out.println("CURRENT " + date_time);
                     prosts = false;
+                    //sendMessageApi();
                     new SendMessage().execute();
                 }
             }
@@ -330,6 +337,50 @@ Toast.makeText(ChatingAct.this,getResources().getString(R.string.typemessage),To
             return rowView;
         }
 
+    }
+
+    private void sendMessageApi() {
+
+        HashMap<String,String> param = new HashMap<>();
+        HashMap<String,File> fileParam = new HashMap<>();
+
+        if (ImagePath.equalsIgnoreCase("")) {
+            fileParam.put("chat_image", new File(""));
+        } else {
+            File ImageFile = new File(ImagePath);
+            fileParam.put("chat_image", ImageFile);
+        }
+
+        messagetext = "";
+        message_et.setText("");
+        ImagePath = "";
+        prgressbar.setVisibility(View.GONE);
+
+        param.put("sender_id", user_id);
+        param.put("receiver_id", receiver_id);
+        param.put("chat_message", messagetext);
+        param.put("request_id", request_id);
+        param.put("time_zone", time_zone);
+        param.put("date_time", date_time);
+        param.put("type", "Normal");
+
+        Log.e("gfgfgfgfgfgf","param = " + param.toString());
+
+        AndroidNetworking.post(BaseUrl.baseurl + "insert_chat")
+                .addBodyParameter(param)
+                .build()
+                .getAsString(new StringRequestListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        new MyConverSession().execute();
+                        Log.e("gfgfgfgfgfgf","Response abccc = " + response);
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        Log.e("gfgfgfgfgfgf","anError abccc = " + anError.getErrorDetail());
+                    }
+                });
     }
 
     public class SendMessage extends AsyncTask<String, String, String> {
@@ -553,7 +604,6 @@ Log.e("Chat MEssages >>",""+result);
 
         if (resultCode == RESULT_OK) {
 
-
             switch (requestCode) {
                 case 1:
                     Uri selectedImage = data.getData();
@@ -570,17 +620,14 @@ Log.e("Chat MEssages >>",""+result);
                     decodeFile(ImagePath);
                     break;
                 case 2:
-
                     Bitmap photo = (Bitmap) data.getExtras().get("data");
                     // File file = new File(photo);
-                    //  save(file.getAbsolutePath());
+                    // save(file.getAbsolutePath());
                     ImagePath = saveToInternalStorage(photo);
                     Log.e("PATH Camera", "" + ImagePath);
 
-                    //  avt_imag.setImageBitmap(photo);
+                    // avt_imag.setImageBitmap(photo);
                     break;
-
-
             }
         }
     }
@@ -625,7 +672,6 @@ Log.e("Chat MEssages >>",""+result);
         return mypath.getAbsolutePath();
     }
 
-
     public void decodeFile(String filePath) {
         // Decode image size
         BitmapFactory.Options o = new BitmapFactory.Options();
@@ -652,10 +698,9 @@ Log.e("Chat MEssages >>",""+result);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
         date_time = format.format(today);
         System.out.println("CURRENT " + date_time);
-prosts = true;
-        new SendMessage().execute();
-
-
+        prosts = true;
+        //sendMessageApi();
+         new SendMessage().execute();
     }
 
 }

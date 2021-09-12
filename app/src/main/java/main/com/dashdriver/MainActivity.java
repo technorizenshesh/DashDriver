@@ -102,6 +102,7 @@ import main.com.dashdriver.utils.NotificationUtils;
 import www.develpoeramit.mapicall.ApiCallBuilder;
 
 public class MainActivity extends BaseActivity implements OnMapReadyCallback {
+
     private FrameLayout contentFrameLayout;
     private GoogleMap gMap;
     GPSTracker gpsTracker;
@@ -120,7 +121,7 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
     String car_number = "";
     private TextView carname, carnumber;
     private ImageView carimage;
-    private LinearLayout addcarlay, carinfolay;
+    private LinearLayout addcarlay,carinfolay;
     Dialog canceldialog;
     String status_job = "", request_id_main = "";
     public static int driver_sts = 0;
@@ -132,11 +133,9 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
     private FloatingActionButton book_now;
     private Timer mTimer2;
     private Dialog dialog;
+    private MediaPlayer mPlayer;
 
-    private enum TimerStatus {
-        STARTED,
-        STOPPED
-    }
+    private enum TimerStatus { STARTED, STOPPED }
 
     private long timeCountInMilliSeconds;
     private TimerStatus timerStatus = TimerStatus.STOPPED;
@@ -160,16 +159,17 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         myLanguageSession = new MyLanguageSession(this);
         language = myLanguageSession.getLanguage();
+        mPlayer = MediaPlayer.create(this, R.raw.driver);
         myLanguageSession.setLangRecreate(myLanguageSession.getLanguage());
         contentFrameLayout = (FrameLayout) findViewById(R.id.contentFrame);
+
         try {
             final Window win= getWindow();
             win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
             win.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
             // unlock screen
-        }catch (Exception e){
+        } catch (Exception e) {}
 
-        }
         getLayoutInflater().inflate(R.layout.activity_main, contentFrameLayout);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (myLanguageSession.getLanguage().equalsIgnoreCase("ar")) {
@@ -590,18 +590,15 @@ private void DismissDialog(){
             }
         });
         dialog.show();
-
-
     }
 
     private void showNewRequest(String firstname, String lastname, String picuplocation, String dropofflocation, final String request_id, String picklaterdate, String picklatertime, String booktype, String rating, String favorite_ride, String payment_type, String est_pickup_distance, String est_pickup_time) {
         DismissDialog();
-        MediaPlayer mPlayer = MediaPlayer.create(this, R.raw.driver);
         mPlayer.start();
         mPlayer.setLooping(true);
         dialogsts_show = true;
         request_id_main = request_id;
-        //   Log.e("War Msg in dialog", war_msg);
+        // Log.e("War Msg in dialog", war_msg);
         dialog = new Dialog(MainActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -629,15 +626,16 @@ private void DismissDialog(){
         } else {
             favroiteride.setVisibility(View.GONE);
         }
-        TextView accept =  dialog.findViewById(R.id.accept);
-        TextView pick_location =  dialog.findViewById(R.id.pick_location);
-        TextView drop_location =  dialog.findViewById(R.id.drop_location);
-        textViewTime =  dialog.findViewById(R.id.textViewTime);
-        TextView username =  dialog.findViewById(R.id.username);
+
+        TextView accept = dialog.findViewById(R.id.accept);
+        TextView pick_location = dialog.findViewById(R.id.pick_location);
+        TextView drop_location = dialog.findViewById(R.id.drop_location);
+        textViewTime = dialog.findViewById(R.id.textViewTime);
+        TextView username = dialog.findViewById(R.id.username);
         final ProgressBar progressBarCircle = (ProgressBar) dialog.findViewById(R.id.progressBarCircle);
         username.setText("" + firstname + " " + lastname);
-        pick_location.setText("" + picuplocation);
-        drop_location.setText("" + dropofflocation);
+        pick_location.setText("Pickup : " + picuplocation);
+        drop_location.setText("Destination : " + dropofflocation);
         //int sec = 60;
         int sec = 60;
         int mili = 1000;
@@ -672,7 +670,6 @@ private void DismissDialog(){
                 if (NotificationUtils.r != null && NotificationUtils.r.isPlaying()) {
                     NotificationUtils.r.stop();
                 }
-
                 if (dialog != null || dialog.isShowing()) {
                     dialog.cancel();
                     dialog.dismiss();
@@ -743,7 +740,20 @@ private void DismissDialog(){
 
 
     }
+private void StopTime(){
+    mPlayer.stop();
+    if (NotificationUtils.r != null && NotificationUtils.r.isPlaying()) {
+        NotificationUtils.r.stop();
+    }
 
+    if (dialog != null) {
+        dialog.cancel();
+        dialog.dismiss();
+        diff_second = "";
+    }
+    stopCountDownTimer();
+    timerStatus = TimerStatus.STOPPED;
+}
     private class ResponseToRequest extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
@@ -766,14 +776,14 @@ private void DismissDialog(){
                 String postReceiverUrl = BaseUrl.baseurl + "driver_accept_and_Cancel_request?";
 
                 URL url = new URL(postReceiverUrl);
-                Map<String, Object> params = new LinkedHashMap<>();
-
+                Map<String,Object> params = new LinkedHashMap<>();
 
                 params.put("request_id", strings[0]);
                 params.put("status", strings[1]);
                 params.put("timezone", time_zone);
                 params.put("driver_id", user_id);
 
+                Log.e("dsfafdasfsaf","param = " + params.toString());
 
                 StringBuilder postData = new StringBuilder();
                 for (Map.Entry<String, Object> param : params.entrySet()) {
@@ -810,7 +820,7 @@ private void DismissDialog(){
 
         @Override
         protected void onPostExecute(String result) {
-            Log.e("driver_accept",""+result);
+            Log.e("driver_accept","" + result);
             super.onPostExecute(result);
             if (ac_dialog != null) {
                 ac_dialog.dismiss();
@@ -820,16 +830,16 @@ private void DismissDialog(){
                 Toast.makeText(MainActivity.this, getResources().getString(R.string.servererror), Toast.LENGTH_LONG).show();
             } else if (result.isEmpty()) {
                 Toast.makeText(MainActivity.this, getResources().getString(R.string.servererror), Toast.LENGTH_LONG).show();
-
             } else {
-
                 try {
                     JSONObject jsonObject = new JSONObject(result);
                     if (jsonObject.getString("message").equalsIgnoreCase("unsuccessfull")) {
                         reideAllreadyCanceled();
+                    } else if(jsonObject.getString("status").equalsIgnoreCase("3")){
+                        Toast.makeText(MainActivity.this, "Your account is not approved by admin", Toast.LENGTH_LONG).show();
+                        sessionexp();
                     } else {
                         if (status_job.equalsIgnoreCase("Cancel")) {
-
                         } else {
                             Intent i = new Intent(MainActivity.this, TripStatusAct.class);
                             i.putExtra("request_id", request_id_main);
@@ -1190,7 +1200,6 @@ private void DismissDialog(){
 
                             } else {
                                 showNewRequest(firstname, lastname, picuplocation, dropofflocation, request_id, picklaterdate, picklatertime, booktype, rating, favorite_ride, payment_type, est_pickup_distance, est_pickup_time);
-
                             }
                         } /*else if (status.equalsIgnoreCase("Accept")) {
                             Intent k = new Intent(MainActivity.this, TripStatusAct.class);
@@ -1206,9 +1215,9 @@ private void DismissDialog(){
                             startActivity(j);
                         }*/
                     }
+                }else {
+                    StopTime();
                 }
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }

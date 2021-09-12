@@ -65,7 +65,8 @@ public class UpdateVehicle extends AppCompatActivity {
     private RelativeLayout vehiclomglay;
     private ImageView carimage;
     private String VEHICLE_IMG_PATH = "";
-    private EditText vehiclename, vehicleplatenumber, vehiclemodelyear, vehiclecolor,licenseplate,vehiclemake;
+    private EditText vehiclename, vehicleplatenumber, vehiclemodelyear,
+            vehiclecolor,licenseplate,vehiclemake;
     private Spinner vehicletype, vehiclesize;
     private String vehicle_name_str = "", vehicle_plate_number_str = "", vehicle_model_str = "", vehicle_col_str = "", vehicle_type_str = "", vehicle_type_id_str, vehicle_size_str = "", vehicle_size_id_str = "";
     ACProgressCustom ac_dialog;

@@ -5,7 +5,9 @@
     <permission
         android:name="main.com.dashdriver.googlemapsv2.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="main.com.dashdriver.permission.MAPS_RECEIVE" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -32,75 +34,76 @@
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
+
         <activity android:name="main.com.dashdriver.activity.PayoutActivity"></activity>
+
         <activity
             android:name="main.com.dashdriver.MainActivityDummy"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.ChatingAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.AddVehicle"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.AboutUsAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.PrivacyPolicyAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.TermsConditions"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.InviteEarnAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.EmergencyActivity"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.AddBankAccountAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.paymentclasses.SaveCardDetail"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.paymentclasses.MyCardsPayment"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.ManageDocumentAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.MyVehiclsAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.UpdateVehicle"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.activity.ProfileAct"
-            android:label=""
-             />
+            android:label="" />
+
         <activity
             android:name="main.com.dashdriver.draweractivity.BaseActivity"
-            android:label=""
-             />
+            android:label="" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/googlekey" />
+            android:value="@string/googlekeyNew" />
 
         <activity android:name="main.com.dashdriver.activity.WelcomeAct" />
         <activity android:name="main.com.dashdriver.activity.SplashActivity">
@@ -145,6 +148,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>

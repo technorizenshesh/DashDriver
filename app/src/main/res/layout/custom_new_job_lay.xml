@@ -27,8 +27,8 @@
                 android:background="@color/toobarcolor"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingBottom="5dp"
                 android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:weightSum="3">
 
                 <TextView
@@ -95,172 +95,174 @@
 
 
         </RelativeLayout>
-<RelativeLayout
-    android:id="@+id/ddd"
-
-    android:layout_alignParentBottom="true"
-    android:background="@color/buttoncol"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:gravity="center"
-        android:orientation="vertical">
 
         <RelativeLayout
-            android:padding="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:id="@+id/ddd"
 
-            <TextView
-                android:id="@+id/pickup_distnace_tv"
-                android:textColor="@color/white"
-                android:text="Distance : 0 mile"
-                android:textSize="@dimen/medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/pickup_time_tv"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/white"
-                android:text="Time : 0 min"
-                android:textSize="@dimen/medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/payment_type_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text=""
-            android:textColor="@color/white"
-            android:textSize="@dimen/medium" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:text="Location"
-            android:textColor="@color/white"
-            android:textSize="@dimen/medium" />
-
-        <View
-            android:layout_width="120dp"
-            android:layout_height="1dp"
-            android:background="@color/white"></View>
-
-        <TextView
-            android:id="@+id/pick_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Megha system inc"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/drop_location"
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Megha system inc dkd kis jdjjdi dj"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/datetimetv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/white"
-            android:visibility="gone" />
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"></View>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:weightSum="2">
+            android:layout_alignParentBottom="true"
+            android:background="@color/buttoncol">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/star" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/rating_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/large" />
-
-
-            </LinearLayout>
-
-            <View
-                android:visibility="gone"
-                android:layout_width="0.5dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"></View>
-
-            <LinearLayout
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/username"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/pickup_distnace_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Distance : 0 mile"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/medium" />
+
+                    <TextView
+                        android:id="@+id/pickup_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Time : 0 min"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/medium" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/payment_type_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Location"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="1dp"
+                    android:background="@color/white"></View>
+
+                <TextView
+                    android:id="@+id/pick_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Megha system inc"
                     android:textColor="@color/white" />
 
+                <TextView
+                    android:id="@+id/drop_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Megha system inc dkd kis jdjjdi dj"
+                    android:textColor="@color/white" />
 
+                <TextView
+                    android:id="@+id/datetimetv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/star" />
+
+                        <TextView
+                            android:id="@+id/rating_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/large" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:visibility="gone"></View>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/favroiteride"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/fav_add"
+                android:visibility="gone" />
 
-        </LinearLayout>
-    </LinearLayout>
-
-    <ImageView
-        android:visibility="gone"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/favroiteride"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/fav_add" />
-
-</RelativeLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
 </RelativeLayout>

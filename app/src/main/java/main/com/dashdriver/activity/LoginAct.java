@@ -72,9 +72,10 @@ import main.com.dashdriver.constant.MySession;
 import main.com.dashdriver.restapi.ApiClient;
 
 public class LoginAct extends AppCompatActivity {
+
     private Button loginbut;
     private RelativeLayout backbut, facebooklay;
-private TextView forgot_tv;
+    private TextView forgot_tv;
     private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
     private static final long MINIMUM_TIME_BETWEEN_UPDATES = 0; // in Milliseconds
     LocationManager locationManager;
@@ -104,7 +105,6 @@ private TextView forgot_tv;
         language = myLanguageSession.getLanguage();
         myLanguageSession.setLangRecreate(myLanguageSession.getLanguage());
 
-
         setContentView(R.layout.activity_login);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (myLanguageSession.getLanguage().equalsIgnoreCase("ar")) {
@@ -117,7 +117,7 @@ private TextView forgot_tv;
 
         TelephonyManager tm = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
         countryCodeValue = tm.getNetworkCountryIso();
-Log.e("countryCodeValue >"," >>"+countryCodeValue);
+        Log.e("countryCodeValue >"," >>" + countryCodeValue);
         mySession = new MySession(this);
         ac_dialog = new ACProgressCustom.Builder(this)
                 .direction(ACProgressConstant.DIRECT_CLOCKWISE)
@@ -136,14 +136,13 @@ Log.e("countryCodeValue >"," >>"+countryCodeValue);
         checkGps();
         idinti();
         clickevent();
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
-
-
     }
 
     @Override
@@ -169,7 +168,6 @@ Log.e("countryCodeValue >"," >>"+countryCodeValue);
 
             }
         } else {
-
             if (location != null) {
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
@@ -179,7 +177,6 @@ Log.e("countryCodeValue >"," >>"+countryCodeValue);
                 longitude = SplashActivity.longitude;
                 Log.e("LAT", "" + latitude);
                 Log.e("LON", "" + longitude);
-
             }
         }
 
@@ -273,6 +270,9 @@ Log.e("countryCodeValue >"," >>"+countryCodeValue);
         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(instanceIdResult -> {
             firebase_regid=instanceIdResult.getToken();
         });
+
+        Log.e("hjdzsfgdhksgfhk","Firebase Id = " + firebase_regid);
+
     }
 
 
